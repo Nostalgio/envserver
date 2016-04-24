@@ -1,0 +1,138 @@
+@import "compass/css3/transform"
+
+// PNA Colors
+$pna-blue: #1076bc
+$red-highlight: #E2C2C2
+
+// Header
+.header-title
+  font-family: 'Permanent Marker', cursive
+  padding-top: 20px
+  i.fa
+    @include rotate(-15deg)
+.header-subtitle
+  padding-bottom: 20px
+
+.web-logo
+  width: 200px
+  margin-top: 10px
+  margin-bottom: 20px
+
+// Common classes
+.align-right
+  text-align: right
+.align-left
+  text-align: left
+.align-center
+  text-align: center
+.red
+  color: $alert-color
+.full-width
+  width: 100%
+.right-button
+  margin-right: 10px
+.cancel_button
+  margin-right: 10px
+.stack-button
+  margin-bottom: 0.5rem
+.no-margin
+  margin: 0 !important
+.hidden
+  display: none
+
+// Tabs
+@import "compass/css3/animation"
+@include keyframes(fadeIn)
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.tabs-content
+  >
+    .content
+      display: none
+      opacity: 0
+
+    .content.active
+      display: block
+      animation: fadeIn .1s
+      opacity: 1
+
+// Accordions
+dd.accordion-navigation > div.content
+  border: 1px solid #d8d8d8
+
+
+// Fieldsets
+div.panel legend
+  background: #F2F2F2
+
+div.panel.light legend
+  background: #FFF
+
+
+// Order Form
+@import "compass/css3/border-radius"
+
+ul.tabs li
+  border: 1px solid #333
+  @include border-top-radius(5px)
+  margin-right: 4px
+  margin-top: 2px
+  &.active
+    border-bottom: 1px solid #FFF
+  a
+    @include border-top-radius(5px)
+
+div.tabs-content
+  border: 1px solid #333
+  padding: 1rem 2rem
+  margin: -0.06rem 0 15px 0 // -1px, but for Chrome :,(
+
+// Foundation doesn't do everything right
+@media print
+  html
+    height: auto
+    width: rem-calc(990px)
+  body
+    margin: 15mm 20mm 20mm 20mm
+
+  @for $i from 1 through $total-columns
+    .medium-#{$i}
+      width: percentage($i / $total-columns)
+
+// PI Sheets
+.epsilon
+  font-size: 1.8em
+  font-weight: normal
+
+.epsilon-p
+  font-size: 1.4em
+  font-weight: 300
+
+@media print
+  body#pi_sheet
+    font-size: 18px
+  *.pi
+    color: $pna-blue !important
+  *.pi-em
+    color: $pna-blue !important
+    font-style: italic
+
+
+
+ul strong.pi-title
+  font-style: italic
+  margin-left: -1rem
+
+ul.pi-subtitle
+  margin-top: 8px
+
+// HTML5 Hacks
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number]
+  -moz-appearance: textfield

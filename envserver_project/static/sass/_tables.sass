@@ -1,0 +1,119 @@
+
+table tr.even, table tr.alt, table tr:nth-of-type(even)
+  background: #F4F4F4
+
+td.error
+  background-color: #FAB1B1
+
+table.pi-table
+  border: none
+
+table.pi-title
+  border: none
+  margin-bottom: 1rem
+  td
+    padding: 0
+  h5
+    margin-bottom: 0
+
+td.blue-underline
+  width: 100%
+  whitespace: nowrap
+  overflow: hidden
+  border-bottom: 1px solid $pna-blue
+
+div.full-width-table-wrapper
+  max-width: 1680px
+  margin: 0 auto
+
+
+tbody.company-group
+  td.row-counter
+    border-bottom: 1px solid #DDD
+  tr.bottom-row
+    td
+      border-bottom: 1px solid #DDD
+  &:hover
+    background-color: $highlight
+    tr
+      background-color: $highlight
+
+tbody.user-table, tbody.item-table, tbody.order-table, tbody.highlight
+  tr:hover
+    background-color: $highlight
+  td
+    position: relative
+
+tr.info, tr.active_filter
+  td
+    background-color: #d9edf7
+
+tr.warning
+  td
+    background-color: #fcf8e3
+
+tr.error
+  td
+    background-color: #f2dede
+
+tbody.totals-section
+  tr
+    background-color: #FFF
+  tr:nth-of-type(even)
+    td.order-total
+      background-color: #F9F9F9
+
+td.order-total
+  border-top: 1px solid #DDD
+  border-left: 1px solid #DDD
+
+table.short-table
+  max-height: 260px
+  display: flex
+  flex-flow: column
+  width: 100%
+  thead
+    flex: 0 0 auto
+    width: 100%
+    padding-right: 0.9em
+  tbody
+    flex: 1 1 auto
+    display: block
+    overflow-y: scroll
+  tbody tr
+    width: 100%
+  thead, tbody tr
+    display: table
+    table-layout: fixed
+
+// Not Original Probes
+tr.not_original
+  display: none
+  td
+    background-color: #E5F5FF
+#toggle-not-original
+  margin-left: 1rem
+tr.hidden-balancer
+  display: none
+
+
+// Mer & Precursor box
+div.mer_count
+  position: absolute
+  top: 0
+  right: 0
+  border: 1px solid #6f6f6f
+  padding: 0.025rem 0.05rem
+  font-size: 0.7rem
+  line-height: 0.7rem
+
+div.precursor
+  position: absolute
+  top: 0
+  left: 0
+  padding: 0.05rem
+
+  font-size: 0.6rem
+  line-height: 0.6rem
+  background-color: #CE9797
+  color: #FFF

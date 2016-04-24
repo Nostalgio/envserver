@@ -1,0 +1,201 @@
+@import "compass/css3/border-radius"
+
+// COLORS
+$highlight: #fcf8e3
+$red-highlight: #E2C2C2
+
+.green
+  color: $success-color
+.red
+  color: $alert-color
+
+// NAV
+.top-bar-section li:hover > a
+  background-color: scale-color($primary-color, $lightness: -14%) !important
+
+
+// HEADER
+#dashboard_body
+  header
+    background-color: scale-color($white, $lightness: -5%)
+    border-bottom: 1px solid #d8d8d8
+    img
+      height: 80px
+      margin-top: 6px
+      margin-right: 25px
+    h3
+      margin-top: 8px
+
+#login_link
+  display: block
+  margin-top: 24px
+  margin-bottom: 10px
+  right: 0
+
+  a
+    white-space: nowrap
+
+.demo_label
+  background-color: #FFE26E
+  padding: 10px
+  @include border-radius(6px)
+
+
+.fixed
+  z-index: 150
+
+// CONTENT
+h4.has-subtitle
+  line-height: 1
+  margin-bottom: -14px
+
+h4.has-subtitles
+  line-height: 0.9
+  margin-bottom: 0.75rem
+
+.wide-row
+  @include grid-row()
+  max-width: rem-calc(1200)
+  .wide-row
+    @include grid-row(nest)
+    max-width: rem-calc(1200)
+  &.fiver-parent
+    overflow-x: hidden
+.fiver-row
+  width: 120%
+.wide-row-nested
+  @include grid-row(nest)
+  max-width: rem-calc(1200)
+
+form.find-sequence
+  margin-top: 6px
+
+.sequence-break
+  word-wrap: break-word
+  max-width: 340px
+
+.panel.light
+  background-color: #FFF
+
+.sub-nav
+  background-color: #F2F2F2
+  padding: 10px 10px 10px 0
+
+.bold
+  font-weight: bold
+
+.short
+  margin-bottom: 0px
+
+.no-wrap
+  white-space: nowrap
+
+a.fail_or_cancel
+  color: #CCC
+
+.overflow-notes
+  max-width: 120px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  display: inline-block
+
+.logo-table
+  max-height: 66px
+  max-width: 140px
+
+.logo-update
+  max-height: 90px
+  max-width: 180px
+  margin-bottom: 15px
+
+#logo-clear_id
+  margin-left: 20px
+
+div.hint
+  font-size: 0.8em
+  font-style: italic
+  color: #4d4d4d
+
+button.postfix
+  margin-bottom: 1rem
+
+div.delete-field
+  @include border-radius(6px)
+  border: 1px solid $gainsboro
+  background-color: $secondary-color
+  padding: 0.5em 0.75em
+  label
+    line-height: 1.3
+  input[type="checkbox"]
+    margin-bottom: 0
+    margin-left: 0
+
+input[type="checkbox"]
+  margin-left: 0.5rem
+
+.field-box
+  // looks like a form field, but is just a label.
+  @include prefix-postfix-base()
+  @include prefix()
+  // override defaults
+  border-right: 1px solid $input-prefix-border-color
+  background-color: #f2f2f2 !important
+
+
+div.loading
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+  background-color: #71757C
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"
+  filter: alpha(opacity=70)
+  opacity: .70
+  z-index: 140
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -12px 0 0 -12px
+
+.loading-container
+  position: relative
+
+// Side Form
+.side-form
+  display: inline
+  div.row
+    display: inline-block
+    width: 70px !important
+    margin: -10px 0 -16px 4px !important
+
+.side-input
+  margin-bottom: 0 !important
+
+.side-button
+  padding-left: 6px
+  padding-right: 6px
+  margin-bottom: 0 !important
+
+// ACCORDION
+dd i.accordion-icon
+  @extend .fa-plus-circle
+
+dd.active i.accordion-icon
+  @extend .fa-minus-circle
+
+// FIELDSET
+fieldset
+  padding: 0.5rem 0.75rem
+  legend
+    cursor: pointer
+
+// DROPDOWN
+div.large.f-dropdown
+  min-width: 500px
+
+.pointer
+  cursor: pointer

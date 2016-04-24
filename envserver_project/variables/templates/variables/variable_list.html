@@ -1,0 +1,23 @@
+{% extends "variables/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <br><br><br><br>
+    <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+            <h2 class="well">{{ environment.name }}</h2>
+            <ul>
+                {% for var in variables %}
+                    <li>
+                        <a href="{% url 'update_var' var.id %}">{{ var.name }} = {{ var.value }}</a>
+
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_var' %}" class="button secondary">Add Env Var</a>
+        </div>
+
+
+    </div>
+{% endblock %}

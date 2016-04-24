@@ -1,0 +1,78 @@
+{% load staticfiles %}
+{% load compress %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <title>
+        {% block title %}
+            EnvApp.WIN
+        {% endblock title %}
+    </title>
+    <link href='//fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    {% compress css %}
+        <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    {% endcompress %}
+</head>
+<body id="{% block body_id %}{% endblock body_id %}">
+
+
+    <header>
+        <div class="fixed contain-to-grid">
+            <nav class="top-bar" data-topbar role="navigation">
+                <ul class="title-area">
+                    <li class="name">
+                        <h1 cal><a href="{% url 'dashboard:home' %}">
+                            <i class="fa fa-home"></i> EnvApp.WIN
+                        </a></h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon">
+                        <a href="#"><span>Menu</span></a>
+                    </li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <ul class="left">
+                    </ul>
+
+                    <ul class="right">
+                        <li class="">
+                            <a href="#">TEST</a>
+                        </li>
+                    </ul>
+                </section>
+
+            </nav>
+        </div>
+
+    </header>
+
+    {% block messages_content %}
+        {% if messages %}
+        <div class="row messages">
+            <div class="large-12 columns">
+                <p></p>
+                {% for message in messages %}
+                <div data-alert class="alert-box {% if message.tags %}{{ message.tags }}{% endif %} radius">
+                    {{ message }}
+                     <a href="#" class="close">&times;</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    {% endblock messages_content %}
+
+    {% block content %}
+    {% endblock content %}
+
+
+    {% block footer %}
+    {% endblock footer %}
+
+
+</body>
+</html>

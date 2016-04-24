@@ -1,0 +1,20 @@
+{% extends "variables/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <br><br><br><br>
+    <div class="row">
+        <div class="medium-8 medium-offset-2 columns">
+            <form class="" action="." method="post">
+                {% csrf_token %}
+                {{ form }}
+                <h2 class="well">{{ environment.name }}</h2>
+
+                <button type="submit" name="button">Save</button>
+            </form>
+        </div>
+
+
+    </div>
+{% endblock %}

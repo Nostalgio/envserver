@@ -1,0 +1,20 @@
+.scroll-container
+    overflow: hidden
+
+.wtHolder
+    height: 100% !important
+    // Remove excess scroll bars
+    margin-bottom: -100px
+    padding-bottom: 100px
+
+.ht_master .wtHolder:first-child
+    // Add back desired scroll bar
+    margin-bottom: 0 !important
+    padding-bottom: 0 !important
+
+// HANDSONTABLE HACKS
+#handsontable_form
+    th input[type='checkbox']
+        margin: 3px 0 0 0
+    td input[type='checkbox']
+        margin: 3px 0 0 15px

@@ -1,0 +1,6 @@
+Django==1.9.5
+djangorestframework==3.3.3
+django-pyodbc-azure==1.9.3.0
+ecdsa==0.13
+pycrypto==2.6.1
+pyodbc==3.0.10

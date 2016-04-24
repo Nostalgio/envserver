@@ -9,4 +9,6 @@ class VariableViewSet(viewsets.ModelViewSet):
     serializer_class = VariableSerializer
 
     def get_queryset(self):
-        return Variable.objects.filter(user=self.request.user)
+        env = self.request.GET.get('env')
+        return Variable.objects.filter(user=self.request.user
+                ).filter(environment__name=env)

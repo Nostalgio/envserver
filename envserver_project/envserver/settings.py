@@ -94,13 +94,6 @@ DATABASES = {
         'PORT': get_env_var('DB_PORT'),
         'USER': get_env_var('DB_USER'),
         'PASSWORD': get_env_var('DB_PASSWORD'),
-
-        'OPTIONS': {
-            'driver': get_env_var('DB_DRIVER'),
-            'host_is_server': True,
-            'dsn': get_env_var('DSN')
-        }
-
     }
 }
 

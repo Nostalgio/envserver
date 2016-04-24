@@ -97,7 +97,8 @@ DATABASES = {
 
         'OPTIONS': {
             'driver': get_env_var('DB_DRIVER'),
-            'host_is_server': True
+            'host_is_server': True,
+            'dsn': get_env_var('DSN')
         }
 
     }
